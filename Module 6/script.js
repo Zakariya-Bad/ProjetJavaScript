@@ -156,20 +156,19 @@ console.log("Exercice 5 chargé ✅");
 let productNames= ["tshirt","mug","tapis de souris"];
 let productPricesHT= [30,5,20];
 console.log(productNames.length);
+console.log(productPricesHT.length);
 
 function afficherProduitsConsole(){
+
   productNames.forEach((element,index) => {
-    console.log(productNames);
+
+    const priceHT= productPricesHT [index];
+    const priceTTC= calculatePriceTTC(priceHT);
+    const formattedPrice= formatPrice(priceTTC);
+    console.log(`Produit: ${index+1} - Nom: ${element} Prix: ${formattedPrice} `);
+    
   });
 
-  productPricesHT.forEach(element => {
-    console.log(element);
-  });
-
-  calculatePriceTTC();
-
-  formatPrice();
-
-
-  
 }
+
+afficherProduitsConsole();
